@@ -73,7 +73,7 @@ def cross_validation(identifier="MP_", binaries_filepath="Binaries/", results_fi
         datawriter.writerow(["Group Number", "Total Examples", "Total Incorrect", "Total False Negatives", "Total True Positives"])
         # write results for each group
         for group in nested_list:
-            datawriter.writerow([group[0]], results[group[0]])
+            datawriter.writerow([group[0]] + results[group[0]])
     print("Stats saved as {}.csv in {}".format(save_name, results_filepath))
 
 def evaluate_pairings(image_name, piece_height=28, piece_width=28, image_type=".jpg", results_filepath="Results/"):
